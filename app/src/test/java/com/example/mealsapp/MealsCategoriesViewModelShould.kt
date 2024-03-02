@@ -33,7 +33,7 @@ class MealsCategoriesViewModelShould {
 
         mockSuccessfulCase()
 
-        viewModel.rememberMeals.value
+        viewModel.mealsState.value
 
         verify(mealsCategoriesUseCase, times(1)).getCategoryList()
     }

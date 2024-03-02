@@ -6,21 +6,24 @@ import androidx.lifecycle.viewModelScope
 import com.example.mealsapp.data.model.Categories
 import com.example.mealsapp.data.model.Category
 import com.example.mealsapp.domain.MealsCategoriesUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-
-class MealsCategoriesViewModel(
+@HiltViewModel
+class MealsCategoriesViewModel @Inject constructor(
     private val mealsCategoriesUseCase: MealsCategoriesUseCase
 ) : ViewModel() {
 
-    val rememberMeals = mutableStateOf(emptyList<Category>())
+    val mealsState = mutableStateOf(emptyList<Category>())
 
     init {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val meals = getMeals()
-            rememberMeals.value = meals.first().getOrNull()!!.categories
+            mealsState.value = meals.first().getOrNull()!!.categories
         }
     }
 
