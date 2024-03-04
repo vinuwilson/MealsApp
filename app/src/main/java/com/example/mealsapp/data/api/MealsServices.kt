@@ -4,8 +4,6 @@ import com.example.mealsapp.data.model.Categories
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Inject
 
 class MealsServices @Inject constructor(

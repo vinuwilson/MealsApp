@@ -1,8 +1,6 @@
 package com.example.mealsapp.presenter
 
-import android.graphics.drawable.Icon
 import androidx.compose.animation.animateContentSize
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -29,14 +27,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
@@ -45,21 +41,21 @@ import com.example.mealsapp.data.model.Category
 import com.example.mealsapp.ui.theme.MealsAppTheme
 
 @Composable
-fun MealsCategoriesScreen() {
+fun MealsCategoriesScreen(navigationCallback: (String) -> Unit) {
     val viewModel: MealsCategoriesViewModel = hiltViewModel()
 
     val meals = viewModel.mealsState.value
 
     LazyColumn(contentPadding = PaddingValues(dimensionResource(id = R.dimen.content_padding))) {
         items(meals) { meal ->
-            MealCategory(meal)
+            MealCategory(meal, navigationCallback)
         }
     }
 
 }
 
 @Composable
-fun MealCategory(meal: Category) {
+fun MealCategory(meal: Category, navigationCallback: (String) -> Unit) {
     var isExpanded by remember {
         mutableStateOf(false)
     }
@@ -69,6 +65,9 @@ fun MealCategory(meal: Category) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(dimensionResource(id = R.dimen.card_view_padding))
+            .clickable {
+                navigationCallback(meal.description)
+            }
 
     ) {
         Row(modifier = Modifier.animateContentSize()) {
@@ -126,6 +125,6 @@ fun MealCategory(meal: Category) {
 @Composable
 fun CategoryListPreview() {
     MealsAppTheme {
-        MealsCategoriesScreen()
+//        MealsCategoriesScreen()
     }
 }
