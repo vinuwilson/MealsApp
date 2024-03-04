@@ -4,15 +4,12 @@ import com.example.mealsapp.mealslist.data.api.MealsAPI
 import com.example.mealsapp.mealslist.data.api.MealsServices
 import com.example.mealsapp.mealslist.data.model.Categories
 import com.example.mealsapp.utils.BaseUnitTest
-import com.example.mealsapp.utils.MainCoroutineScopeRule
 import com.nhaarman.mockitokotlin2.times
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
-import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito.mock
 
