@@ -1,11 +1,11 @@
-package com.example.mealsapp.presenter
+package com.example.mealsapp.mealslist.presenter
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mealsapp.data.model.Categories
-import com.example.mealsapp.data.model.Category
-import com.example.mealsapp.domain.MealsCategoriesUseCase
+import com.example.mealsapp.mealslist.data.model.Categories
+import com.example.mealsapp.mealslist.data.model.Category
+import com.example.mealsapp.mealslist.domain.MealsCategoriesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

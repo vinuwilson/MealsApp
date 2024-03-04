@@ -1,8 +1,10 @@
 package com.example.mealsapp
 
-import com.example.mealsapp.data.api.MealsServices
-import com.example.mealsapp.data.api.MealsRepositoryImp
-import com.example.mealsapp.data.model.Categories
+import com.example.mealsapp.mealslist.data.api.MealsServices
+import com.example.mealsapp.mealslist.data.api.MealsRepositoryImp
+import com.example.mealsapp.mealslist.data.model.Categories
+import com.example.mealsapp.utils.BaseUnitTest
+import com.example.mealsapp.utils.MainCoroutineScopeRule
 import com.nhaarman.mockitokotlin2.times
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
@@ -15,11 +17,8 @@ import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito.mock
 
-class MealsRepositoryShould {
+class MealsRepositoryShould : BaseUnitTest(){
 
-    @OptIn(ExperimentalCoroutinesApi::class)
-    @get: Rule
-    val coroutineScopeRule = MainCoroutineScopeRule()
 
     private lateinit var repository: MealsRepositoryImp
     private val service : MealsServices = mock()

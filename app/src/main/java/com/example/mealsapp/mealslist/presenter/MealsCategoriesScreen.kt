@@ -1,4 +1,4 @@
-package com.example.mealsapp.presenter
+package com.example.mealsapp.mealslist.presenter
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.clickable
@@ -37,7 +37,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.mealsapp.R
-import com.example.mealsapp.data.model.Category
+import com.example.mealsapp.mealslist.data.model.Category
 import com.example.mealsapp.ui.theme.MealsAppTheme
 
 @Composable

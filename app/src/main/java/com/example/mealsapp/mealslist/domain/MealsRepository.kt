@@ -1,6 +1,6 @@
-package com.example.mealsapp.domain
+package com.example.mealsapp.mealslist.domain
 
-import com.example.mealsapp.data.model.Categories
+import com.example.mealsapp.mealslist.data.model.Categories
 import kotlinx.coroutines.flow.Flow
 
 interface MealsRepository {

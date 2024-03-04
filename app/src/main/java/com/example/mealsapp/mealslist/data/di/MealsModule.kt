@@ -1,9 +1,9 @@
-package com.example.mealsapp.data.di
+package com.example.mealsapp.mealslist.data.di
 
-import com.example.mealsapp.data.api.MealsAPI
-import com.example.mealsapp.data.api.MealsRepositoryImp
-import com.example.mealsapp.data.api.MealsServices
-import com.example.mealsapp.domain.MealsRepository
+import com.example.mealsapp.mealslist.data.api.MealsAPI
+import com.example.mealsapp.mealslist.data.api.MealsRepositoryImp
+import com.example.mealsapp.mealslist.data.api.MealsServices
+import com.example.mealsapp.mealslist.domain.MealsRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

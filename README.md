@@ -5,6 +5,7 @@ This is a native Android mobile app that utilizes the themealdb API to showcase 
 The app features a list of meal categories, each accompanied by an image and additional details. 
 Users can expand the list by tapping on the chevron icon, revealing more information directly on the home screen. 
 Upon selecting a specific meal from the list, users are redirected to a separate page where they can explore further details about the selected meal.
+The project followed SOLID principle and clean code architecture design principles.
 
 API's used
 1. https://www.themealdb.com/api/json/v1/1/categories.php
@@ -14,10 +15,10 @@ API's used
 * Gson - Gson converter as a Retrofit response mapping library
 * Hilt - Dependency injection
 * Navigation - Jetpack's navigation component
-
+* Mockito - To mock the class for unit test
 
 # Android components
-* Compose - UI created using compose
+* Jetpack Compose - UI created using compose
 * Coroutines – For Asynchronous or non-blocking programming
 * Flow - Handle streams of data asynchronously
 

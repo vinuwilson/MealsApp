@@ -1,4 +1,4 @@
-package com.example.mealsapp
+package com.example.mealsapp.utils
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

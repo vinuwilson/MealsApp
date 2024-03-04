@@ -16,7 +16,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.mealdetails.presenter.MealDetailsScreen
 import com.example.mealdetails.presenter.MealDetailsViewModel
-import com.example.mealsapp.presenter.MealsCategoriesScreen
+import com.example.mealsapp.mealslist.presenter.MealsCategoriesScreen
 import com.example.mealsapp.ui.theme.MealsAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 

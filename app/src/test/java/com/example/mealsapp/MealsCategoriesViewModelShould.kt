@@ -1,8 +1,10 @@
 package com.example.mealsapp
 
-import com.example.mealsapp.data.model.Categories
-import com.example.mealsapp.domain.MealsCategoriesUseCase
-import com.example.mealsapp.presenter.MealsCategoriesViewModel
+import com.example.mealsapp.mealslist.data.model.Categories
+import com.example.mealsapp.mealslist.domain.MealsCategoriesUseCase
+import com.example.mealsapp.mealslist.presenter.MealsCategoriesViewModel
+import com.example.mealsapp.utils.BaseUnitTest
+import com.example.mealsapp.utils.MainCoroutineScopeRule
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.times
 import com.nhaarman.mockitokotlin2.verify
@@ -16,11 +18,8 @@ import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
 
-class MealsCategoriesViewModelShould {
+class MealsCategoriesViewModelShould : BaseUnitTest() {
 
-    @OptIn(ExperimentalCoroutinesApi::class)
-    @get: Rule
-    val coroutineScopeRule = MainCoroutineScopeRule()
 
     private lateinit var viewModel: MealsCategoriesViewModel
     private val mealsCategoriesUseCase: MealsCategoriesUseCase = mock()
