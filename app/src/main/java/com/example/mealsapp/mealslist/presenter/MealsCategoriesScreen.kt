@@ -20,6 +20,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -41,10 +42,12 @@ import com.example.mealsapp.mealslist.data.model.Category
 import com.example.mealsapp.ui.theme.MealsAppTheme
 
 @Composable
-fun MealsCategoriesScreen(navigationCallback: (String) -> Unit) {
-    val viewModel: MealsCategoriesViewModel = hiltViewModel()
+fun MealsCategoriesScreen(
+    state: State<MealsCategoriesViewModel.MealSate>,
+    navigationCallback: (String) -> Unit
+) {
 
-    val meals = viewModel.mealsState.value
+    val meals = state.value.category
 
     LazyColumn(contentPadding = PaddingValues(dimensionResource(id = R.dimen.content_padding))) {
         items(meals) { meal ->
